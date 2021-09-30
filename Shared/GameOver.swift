@@ -23,6 +23,9 @@ struct GameOver : View{
             Image(lastNamePressed)
                 .resizable()
                 .frame(width: 200, height: 200)
+                .cornerRadius(20)
+                .overlay(RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.black, lineWidth: 4))
             
             Text(getDishName())
                 .bold()
