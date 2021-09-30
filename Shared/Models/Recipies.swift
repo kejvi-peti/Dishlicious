@@ -138,6 +138,22 @@ let recipiesData : [[String: String]] = [
         "history": "This Lakota-inspired recipe calls for flour made from the timpsila or prairie turnip, but you can substitute a different starch thickener such as cornstarch or arrowroot.",
         "recipeURL": "https://foragerchef.com/wild-berry-thinpsinla-wozapi/",
         "difficulty": "1"
+    ],
+    [
+        "image" : "recipe-17",
+        "name": "Traditional Pi'kwun Salmon",
+        "nativeName": "-",
+        "history": "This is meant to be cooked over an open fire on wooden stakes. The tricky part is deboning the salmon and spreading it apart into two halves while still leaving it whole.",
+        "recipeURL": "https://www.bakespace.com/recipes/detail/Traditional-Pi%27kwun-Salmon/69899/",
+        "difficulty": "3"
+    ],
+    [
+        "image" : "recipe-18",
+        "name": "Métis Boulettes",
+        "nativeName": "-",
+        "history": "This meatball soup is a traditional New Year's recipe for many Métis people.",
+        "recipeURL": "https://www.cbc.ca/life/food/metis-boulettes-1.5044911",
+        "difficulty": "3"
     ]
 ]
     
