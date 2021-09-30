@@ -29,7 +29,7 @@ struct GameField: View {
     @State var direction = 1.0;
     
     init(d: [[String: String]], c: Int, f: String, s: String, gameOver: Bool, main: Binding<Bool>, diff: Binding<Int>){
-        let names =  Recipies.getRecipe(with: "\(diff.wrappedValue)")
+        let names = Recipies.getRecipe(with: "\(diff.wrappedValue)")
         self.firstImage = names[0]
         self.secondImage = names[1]
         self.data = Recipies.getRecipiesForDificulty(difficulty: "\(diff.wrappedValue)", f: names[0], s: names[1])
@@ -48,25 +48,27 @@ struct GameField: View {
                 Button(action: {
                     playSound("bling.wav")
                     self.lastNamePressed = self.firstImage
-                    if(count == 3){
+                    if (count == 3 || self.data.count <= 0) {
+                        // user has seen enough or there are no recipes left, game over
                         gameOver = true
+                        return
                     }
                     
                     self.secondFade.toggle()
                     self.direction = -1.0;
                     
                     // delayed image update
+                    let futureImage = self.data.randomElement()?["image"] ?? ""
+                    self.data = self.data.filter{!$0.values.contains(futureImage)}
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + kAnimationDuration) {
                         self.direction = 1.0;
                         
                         withAnimation {
-                            self.secondImage = data.randomElement()?["image"] ?? ""
+                            self.secondImage = futureImage
                             self.secondFade.toggle()
                         }
                     }
-                    
-                    self.data = self.data.filter{!$0.values.contains(self.secondImage)}
-                    count = count + 1
                 }, label: {
                     Image(firstImage)
                         .resizable()
@@ -85,25 +87,27 @@ struct GameField: View {
                 Button(action: {
                     playSound("bling.wav")
                     self.lastNamePressed = self.secondImage
-                    if(count == 3){
+                    if (count == 3 || self.data.count <= 0) {
+                        // user has seen enough or there are no recipes left, game over
                         gameOver = true
+                        return
                     }
                     
                     self.firstFade.toggle()
                     self.direction = -1
                     
                     // delayed image update
+                    let futureImage = self.data.randomElement()?["image"] ?? ""
+                    self.data = self.data.filter{!$0.values.contains(futureImage)}
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + kAnimationDuration) {
                         self.direction = 1
                         
                         withAnimation {
-                            self.firstImage = data.randomElement()?["image"] ?? ""
+                            self.firstImage = futureImage
                             self.firstFade.toggle()
                         }
                     }
-                    
-                    self.data = self.data.filter{!$0.values.contains(self.firstImage)}
-                    count = count + 1
                 }, label: {
                     Image(secondImage)
                         .resizable()
