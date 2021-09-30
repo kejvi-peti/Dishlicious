@@ -45,32 +45,27 @@ struct GameField: View {
                 Spacer()
                 Button(action: {
                     self.lastNamePressed = self.firstImage
-                    if(count == 3){
+                    if (count == 3 || self.data.count <= 0) {
+                        // user has seen enough or there are no recipes left, game over
                         gameOver = true
+                        return
                     }
                     
                     self.secondFade.toggle()
                     self.direction = -1.0;
                     
                     // delayed image update
+                    let futureImage = self.data.randomElement()?["image"] ?? ""
+                    self.data = self.data.filter{!$0.values.contains(futureImage)}
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + kAnimationDuration) {
                         self.direction = 1.0;
                         
                         withAnimation {
-                            self.secondImage = self.data.randomElement()?["image"] ?? ""
+                            self.secondImage = futureImage
                             self.secondFade.toggle()
                         }
                     }
-                    
-                    self.data = self.data.filter{!$0.values.contains(self.secondImage)}
-                    
-                    if (self.data.count <= 0) {
-                        // no recipes left, game over
-                        gameOver = true
-                    } else {
-                        count = count + 1
-                    }
-                    
                 }, label: {
                     Image(firstImage)
                         .resizable()
@@ -88,30 +83,26 @@ struct GameField: View {
                 
                 Button(action: {
                     self.lastNamePressed = self.secondImage
-                    if(count == 3){
+                    if (count == 3 || self.data.count <= 0) {
+                        // user has seen enough or there are no recipes left, game over
                         gameOver = true
+                        return
                     }
                     
                     self.firstFade.toggle()
                     self.direction = -1
                     
                     // delayed image update
+                    let futureImage = self.data.randomElement()?["image"] ?? ""
+                    self.data = self.data.filter{!$0.values.contains(futureImage)}
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + kAnimationDuration) {
                         self.direction = 1
                         
                         withAnimation {
-                            self.firstImage = self.data.randomElement()?["image"] ?? ""
+                            self.firstImage = futureImage
                             self.firstFade.toggle()
                         }
-                    }
-                    
-                    self.data = self.data.filter{!$0.values.contains(self.firstImage)}
-                    
-                    if (self.data.count <= 0) {
-                        // no recipes left, game over
-                        gameOver = true
-                    } else {
-                        count = count + 1
                     }
                 }, label: {
                     Image(secondImage)
