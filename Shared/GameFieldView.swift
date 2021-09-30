@@ -63,7 +63,14 @@ struct GameField: View {
                     }
                     
                     self.data = self.data.filter{!$0.values.contains(self.secondImage)}
-                    count = count + 1
+                    
+                    if (self.data.count <= 0) {
+                        // no recipes left, game over
+                        gameOver = true
+                    } else {
+                        count = count + 1
+                    }
+                    
                 }, label: {
                     Image(firstImage)
                         .resizable()
@@ -99,7 +106,13 @@ struct GameField: View {
                     }
                     
                     self.data = self.data.filter{!$0.values.contains(self.firstImage)}
-                    count = count + 1
+                    
+                    if (self.data.count <= 0) {
+                        // no recipes left, game over
+                        gameOver = true
+                    } else {
+                        count = count + 1
+                    }
                 }, label: {
                     Image(secondImage)
                         .resizable()
