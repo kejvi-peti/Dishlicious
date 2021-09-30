@@ -22,7 +22,6 @@ struct GameOver : View{
         Text(getDishName())
         Text(getNativeName())
         Text(getHistory())
-        Text(getRecipeUrl())
         Button {
             if let url = URL(string: getRecipeUrl()){
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)

@@ -19,20 +19,15 @@ struct GameField: View {
     @State var lastNamePressed: String
     
     init(data: [[String: String]], count: Int, f: String, s: String, gameOver: Bool, main: Binding<Bool>, diff: Binding<Int>){
-        self.data = recipiesData
-        self.firstImage = data.randomElement()?["image"] ?? ""
-        self.secondImage = data.randomElement()?["image"] ?? ""
+        let names =  Recipies.getRecipe(with: "\(diff)")
+        self.firstImage = names[0]
+        self.secondImage = names[1]
+        self.data = Recipies.getRecipiesForDificulty(difficulty: "\(diff)", f: names[0], s: names[1])
         self.count = count
         self.gameOver = false
         self._mainMenu = main
         self._difficulty = diff
         self.lastNamePressed = ""
-        
-        self.data = self.data.filter{!$0.values.contains("\(difficulty)")}
-        
-        self.data = self.data.filter{!$0.values.contains(firstImage)}
-        self.data = self.data.filter{!$0.values.contains(secondImage)}
-        
     }
     
     var body: some View {
