@@ -16,6 +16,8 @@
 		2B4D104127050080004480C8 /* Recipies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D104027050080004480C8 /* Recipies.swift */; };
 		2B4D104327053C4A004480C8 /* GameFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D104227053C49004480C8 /* GameFieldView.swift */; };
 		2B4D104527053E92004480C8 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D104427053E92004480C8 /* MainMenuView.swift */; };
+		2BBAD36D2706079600C3D2BF /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBAD36C2706079600C3D2BF /* Cards.swift */; };
+		2BBAD36F2706120900C3D2BF /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBAD36E2706120900C3D2BF /* GameOver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		2B4D104027050080004480C8 /* Recipies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipies.swift; sourceTree = "<group>"; };
 		2B4D104227053C49004480C8 /* GameFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldView.swift; sourceTree = "<group>"; };
 		2B4D104427053E92004480C8 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		2BBAD36C2706079600C3D2BF /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		2BBAD36E2706120900C3D2BF /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				2B4D104227053C49004480C8 /* GameFieldView.swift */,
 				2B4D102327050010004480C8 /* Assets.xcassets */,
 				2B4D104427053E92004480C8 /* MainMenuView.swift */,
+				2BBAD36C2706079600C3D2BF /* Cards.swift */,
+				2BBAD36E2706120900C3D2BF /* GameOver.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -195,7 +201,9 @@
 			files = (
 				2B4D104527053E92004480C8 /* MainMenuView.swift in Sources */,
 				2B4D103327050010004480C8 /* ContentView.swift in Sources */,
+				2BBAD36F2706120900C3D2BF /* GameOver.swift in Sources */,
 				2B4D104127050080004480C8 /* Recipies.swift in Sources */,
+				2BBAD36D2706079600C3D2BF /* Cards.swift in Sources */,
 				2B4D103127050010004480C8 /* DishliciousApp.swift in Sources */,
 				2B4D104327053C4A004480C8 /* GameFieldView.swift in Sources */,
 			);

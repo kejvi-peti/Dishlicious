@@ -8,12 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var gameFieldView = false
+    @State var gameFieldView  = false
     @State var difficulty = 0
+    
     var body: some View {
         
         if gameFieldView {
-            GameField(mainMenu: $gameFieldView, difficulty: $difficulty)
+            GameField(
+                data: recipiesData,
+                count: 0,
+                f: "",
+                s: "",
+                gameOver: false,
+                main: $gameFieldView,
+                diff: $difficulty
+            )
         }else{
             MainMenu(gameField: $gameFieldView, difficulty: $difficulty)
         }
@@ -23,6 +32,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(gameFieldView: true, difficulty: 0)
     }
 }
