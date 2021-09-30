@@ -13,6 +13,9 @@
 		2B4D103427050010004480C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D10222705000E004480C8 /* ContentView.swift */; };
 		2B4D103527050010004480C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B4D102327050010004480C8 /* Assets.xcassets */; };
 		2B4D103627050010004480C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B4D102327050010004480C8 /* Assets.xcassets */; };
+		2B4D104127050080004480C8 /* Recipies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D104027050080004480C8 /* Recipies.swift */; };
+		2B4D104327053C4A004480C8 /* GameFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D104227053C49004480C8 /* GameFieldView.swift */; };
+		2B4D104527053E92004480C8 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D104427053E92004480C8 /* MainMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		2B4D102827050010004480C8 /* Dishlicious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dishlicious.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4D102E27050010004480C8 /* Dishlicious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dishlicious.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4D103027050010004480C8 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		2B4D104027050080004480C8 /* Recipies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipies.swift; sourceTree = "<group>"; };
+		2B4D104227053C49004480C8 /* GameFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldView.swift; sourceTree = "<group>"; };
+		2B4D104427053E92004480C8 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +60,12 @@
 		2B4D10202705000E004480C8 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2B4D103F2705006D004480C8 /* Models */,
 				2B4D10212705000E004480C8 /* DishliciousApp.swift */,
 				2B4D10222705000E004480C8 /* ContentView.swift */,
+				2B4D104227053C49004480C8 /* GameFieldView.swift */,
 				2B4D102327050010004480C8 /* Assets.xcassets */,
+				2B4D104427053E92004480C8 /* MainMenuView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -76,6 +85,14 @@
 				2B4D103027050010004480C8 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		2B4D103F2705006D004480C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B4D104027050080004480C8 /* Recipies.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,8 +193,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B4D104527053E92004480C8 /* MainMenuView.swift in Sources */,
 				2B4D103327050010004480C8 /* ContentView.swift in Sources */,
+				2B4D104127050080004480C8 /* Recipies.swift in Sources */,
 				2B4D103127050010004480C8 /* DishliciousApp.swift in Sources */,
+				2B4D104327053C4A004480C8 /* GameFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,8 +329,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FCT75SQ3DW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -324,8 +346,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zemind.Dishlicious;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kejvi.Dishlicious;
 				PRODUCT_NAME = Dishlicious;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -338,8 +361,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FCT75SQ3DW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -353,8 +378,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zemind.Dishlicious;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kejvi.Dishlicious;
 				PRODUCT_NAME = Dishlicious;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var gameFieldView = false
+    @State var difficulty = 0
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        if gameFieldView {
+            GameField(mainMenu: $gameFieldView, difficulty: $difficulty)
+        }else{
+            MainMenu(gameField: $gameFieldView, difficulty: $difficulty)
+        }
+            
     }
 }
 
