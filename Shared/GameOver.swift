@@ -15,26 +15,48 @@ struct GameOver : View{
     
     var body: some View{
         
-        Text("game over")
-        Image(lastNamePressed)
-            .resizable()
-            .frame(width: 200, height: 200)
-        Text(getDishName())
-        Text(getNativeName())
-        Text(getHistory())
-        Button {
-            if let url = URL(string: getRecipeUrl()){
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
-        } label: {
-            Text("Go To Recipe")
-        }
+        VStack(content: {
+            Text("Dish selected!")
+                .font(.headline)
+                .padding(.bottom, 30)
+                .foregroundColor(.pink)
+            
+            Image(lastNamePressed)
+                .resizable()
+                .frame(width: 200, height: 200)
+                .cornerRadius(20)
+                .overlay(RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.black, lineWidth: 4))
+            
+            Text(getDishName())
+                .bold()
+                .padding(.top, 10)
+                .padding(.leading, 20)
+                .padding(.trailing, 20)
+                .multilineTextAlignment(.center)
+            
+            Text(getNativeName())
+                .italic()
+                .multilineTextAlignment(.center)
+            
+            Text(getHistory())
+                .padding(10)
+                .multilineTextAlignment(.center)
+            
+            Button(action: {
+                if let url = URL(string: getRecipeUrl()){
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }, label: {
+                Text("Go To Recipe").bold().foregroundColor(.pink)
+            }).padding(5)
 
-        Button {
-            mainMenu.toggle()
-        } label: {
-            Text("Main Menu")
-        }
+            Button(action: {
+                mainMenu.toggle()
+            }, label: {
+                Text("Main Menu").bold().foregroundColor(.pink)
+            }).padding(5)
+        })
 
     }
     

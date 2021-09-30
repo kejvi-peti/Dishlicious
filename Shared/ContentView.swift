@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var gameFieldView  = false
+    @State var gameFieldView = false
     @State var difficulty = 0
     
     var body: some View {
-        
         if gameFieldView {
+            
             GameField(
                 d: recipiesData,
                 c: 0,
@@ -23,8 +23,17 @@ struct ContentView: View {
                 main: $gameFieldView,
                 diff: $difficulty
             )
+            .animation(.easeInOut)
+            .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
+            
         }else{
-            MainMenu(gameField: $gameFieldView, difficulty: $difficulty)
+            MainMenu(
+                gameField: $gameFieldView,
+                difficulty: $difficulty
+            )
+            .animation(.easeInOut)
+            .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
+            
         }
             
     }

@@ -11,7 +11,15 @@ import SwiftUI
 struct DishliciousApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HStack{
+                Spacer()
+                VStack{
+                    Spacer()
+                    ContentView()
+                    Spacer()
+                }
+                Spacer()
+            }.background(SwiftUI.Color.orange.edgesIgnoringSafeArea(.all))
         }
     }
 }
