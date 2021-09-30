@@ -75,7 +75,8 @@ struct GameField: View {
                         .frame(width: 300, height: 300)
                         .cornerRadius(20)
                         .overlay(RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.black, lineWidth: 4))
+                                    .stroke(Color.orange, lineWidth: 4))
+                        .shadow(radius: 5)
                 })
                 .offset(x: firstFade ? kAnimationOffset * direction : 0)
                 .opacity(firstFade ? 0 : 1)
@@ -114,7 +115,8 @@ struct GameField: View {
                         .frame(width: 300, height: 300)
                         .cornerRadius(20)
                         .overlay(RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.black, lineWidth: 4))
+                                    .stroke(Color.orange, lineWidth: 4))
+                        .shadow(radius: 5)
                 })
                 .offset(x: secondFade ? kAnimationOffset * direction : 0)
                 .opacity(secondFade ? 0 : 1)
@@ -128,7 +130,7 @@ struct GameField: View {
                 } label: {
                     Text("Go Back")
                         .font(.system(size: 30))
-                        .foregroundColor(.pink)
+                        .foregroundColor(.orange)
                 }
             })
             .animation(.easeInOut)

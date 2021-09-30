@@ -19,7 +19,7 @@ struct DishliciousApp: App {
                     Spacer()
                 }
                 Spacer()
-            }.background(SwiftUI.Color.orange.edgesIgnoringSafeArea(.all))
+            }//.background(SwiftUI.Color.orange.edgesIgnoringSafeArea(.all))
         }
     }
 }

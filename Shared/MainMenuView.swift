@@ -27,21 +27,21 @@ struct MainMenu: View {
             } label: {
                 Text("Easy")
                     .font(.system(size: 40))
-                    .foregroundColor(.pink)
+                    .foregroundColor(.orange)
             }.padding()
             Button {
                 self.difficulty = 2
                 self.gameField.toggle()
             } label: {
                 Text("Medium")
-                    .font(.system(size: 40)).foregroundColor(.pink)
+                    .font(.system(size: 40)).foregroundColor(.orange)
             }.padding()
             Button {
                 self.difficulty = 3
                 self.gameField.toggle()
             } label: {
                 Text("Hard")
-                    .font(.system(size: 40)).foregroundColor(.pink)
+                    .font(.system(size: 40)).foregroundColor(.orange)
             }.padding()
             Spacer()
         }

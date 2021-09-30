@@ -17,16 +17,17 @@ struct GameOver : View{
         
         VStack(content: {
             Text("Dish selected!")
-                .font(.headline)
+                .font(.title)
                 .padding(.bottom, 30)
-                .foregroundColor(.pink)
+                .foregroundColor(.orange)
             
             Image(lastNamePressed)
                 .resizable()
                 .frame(width: 200, height: 200)
                 .cornerRadius(20)
                 .overlay(RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.black, lineWidth: 4))
+                            .stroke(Color.orange, lineWidth: 4))
+                .shadow(radius: 5)
             
             Text(getDishName())
                 .bold()
@@ -48,13 +49,13 @@ struct GameOver : View{
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             }, label: {
-                Text("Go To Recipe").bold().foregroundColor(.pink)
+                Text("Go To Recipe").bold().foregroundColor(.orange)
             }).padding(5)
 
             Button(action: {
                 mainMenu.toggle()
             }, label: {
-                Text("Main Menu").bold().foregroundColor(.pink)
+                Text("Main Menu").bold().foregroundColor(.orange)
             }).padding(5)
         })
 
