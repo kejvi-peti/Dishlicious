@@ -15,8 +15,8 @@ struct ContentView: View {
         
         if gameFieldView {
             GameField(
-                data: recipiesData,
-                count: 0,
+                d: recipiesData,
+                c: 0,
                 f: "",
                 s: "",
                 gameOver: false,

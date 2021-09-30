@@ -19,7 +19,6 @@ struct MainMenu: View {
                 .font(.system(size: 50))
             Spacer()
             Button {
-                print("easy")
                 self.difficulty = 1
                 self.gameField.toggle()
             } label: {
@@ -28,7 +27,6 @@ struct MainMenu: View {
             }.padding()
             Button {
                 self.difficulty = 2
-                print("medium")
                 self.gameField.toggle()
             } label: {
                 Text("Medium")
@@ -36,7 +34,6 @@ struct MainMenu: View {
             }.padding()
             Button {
                 self.difficulty = 3
-                print("hard")
                 self.gameField.toggle()
             } label: {
                 Text("Hard")

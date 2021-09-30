@@ -126,9 +126,21 @@ struct Recipies {
     }
     
     static func getRecipe(with difficulty: String) -> [String]{
-        var recipe = recipiesData.filter{!$0.values.contains(difficulty)}
+        var recipe = recipiesData.filter{ recipe in
+            let r = recipe["difficulty"] ?? ""
+            if r == difficulty{
+                return true
+            }
+            return false
+        }
         let firstImage = recipe.randomElement()?["image"] ?? ""
-        recipe = recipiesData.filter{!$0.values.contains(difficulty)}
+        recipe = recipiesData.filter{ recipe in
+            let r = recipe["difficulty"] ?? ""
+            if r == difficulty{
+                return true
+            }
+            return false
+        }
             .filter{!$0.values.contains(firstImage)}
         let secondImage =  recipe.randomElement()?["image"] ?? ""
         return [firstImage, secondImage]

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct GameField: View {
-    @State var data : [[String: String]]
     
+    @State var data : [[String: String]]
     @Binding var mainMenu : Bool
     @Binding var difficulty : Int
     @State var count : Int;
@@ -18,12 +18,13 @@ struct GameField: View {
     @State var gameOver: Bool
     @State var lastNamePressed: String
     
-    init(data: [[String: String]], count: Int, f: String, s: String, gameOver: Bool, main: Binding<Bool>, diff: Binding<Int>){
-        let names =  Recipies.getRecipe(with: "\(diff)")
+    init(d: [[String: String]], c: Int, f: String, s: String, gameOver: Bool, main: Binding<Bool>, diff: Binding<Int>){
+        
+        let names =  Recipies.getRecipe(with: "\(diff.wrappedValue)")
         self.firstImage = names[0]
         self.secondImage = names[1]
-        self.data = Recipies.getRecipiesForDificulty(difficulty: "\(diff)", f: names[0], s: names[1])
-        self.count = count
+        self.data = Recipies.getRecipiesForDificulty(difficulty: "\(diff.wrappedValue)", f: names[0], s: names[1])
+        self.count = c
         self.gameOver = false
         self._mainMenu = main
         self._difficulty = diff
@@ -37,15 +38,10 @@ struct GameField: View {
                 Spacer()
                 Button {
                     self.lastNamePressed = self.firstImage
-                    if(
-                        (difficulty == 1 && count == 1) ||
-                        (difficulty == 2 && count == 2) ||
-                        (difficulty == 3 && count == 3)
-                    
-                    ){
+                    if(count == 3){
                         gameOver = true
                     }
-                    self.secondImage = data.randomElement()?["image"] ?? ""
+                    self.secondImage = self.data.randomElement()?["image"] ?? ""
                     self.data = self.data.filter{!$0.values.contains(self.secondImage)}
                     count = count + 1
                 } label: {
@@ -58,15 +54,10 @@ struct GameField: View {
                 
                 Button(action: {
                     self.lastNamePressed = self.secondImage
-                    if(
-                        (difficulty == 1 && count == 1) ||
-                        (difficulty == 2 && count == 2) ||
-                        (difficulty == 3 && count == 3)
-                    
-                    ){
+                    if(count == 3){
                         gameOver = true
                     }
-                    self.firstImage = data.randomElement()?["image"] ?? ""
+                    self.firstImage = self.data.randomElement()?["image"] ?? ""
                     self.data = self.data.filter{!$0.values.contains(self.firstImage)}
                     count = count + 1
                 }, label: {
