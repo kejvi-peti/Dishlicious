@@ -27,7 +27,7 @@ struct GameField: View {
     @State var direction = 1.0;
     
     init(d: [[String: String]], c: Int, f: String, s: String, gameOver: Bool, main: Binding<Bool>, diff: Binding<Int>){
-        let names =  Recipies.getRecipe(with: "\(diff.wrappedValue)")
+        let names = Recipies.getRecipe(with: "\(diff.wrappedValue)")
         self.firstImage = names[0]
         self.secondImage = names[1]
         self.data = Recipies.getRecipiesForDificulty(difficulty: "\(diff.wrappedValue)", f: names[0], s: names[1])
@@ -57,7 +57,7 @@ struct GameField: View {
                         self.direction = 1.0;
                         
                         withAnimation {
-                            self.secondImage = data.randomElement()?["image"] ?? ""
+                            self.secondImage = self.data.randomElement()?["image"] ?? ""
                             self.secondFade.toggle()
                         }
                     }
@@ -93,7 +93,7 @@ struct GameField: View {
                         self.direction = 1
                         
                         withAnimation {
-                            self.firstImage = data.randomElement()?["image"] ?? ""
+                            self.firstImage = self.data.randomElement()?["image"] ?? ""
                             self.firstFade.toggle()
                         }
                     }
