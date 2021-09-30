@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct GameField: View {
     
@@ -17,6 +18,7 @@ struct GameField: View {
     @State var secondImage : String
     @State var gameOver: Bool
     @State var lastNamePressed: String
+    @State var audioPlayer: AVAudioPlayer!
     
     init(d: [[String: String]], c: Int, f: String, s: String, gameOver: Bool, main: Binding<Bool>, diff: Binding<Int>){
         
@@ -37,6 +39,7 @@ struct GameField: View {
             VStack{
                 Spacer()
                 Button {
+                    playSound("bling.wav")
                     self.lastNamePressed = self.firstImage
                     if(count == 3){
                         gameOver = true
@@ -53,6 +56,7 @@ struct GameField: View {
                 Spacer()
                 
                 Button(action: {
+                    playSound("bling.wav")
                     self.lastNamePressed = self.secondImage
                     if(count == 3){
                         gameOver = true
@@ -74,25 +78,23 @@ struct GameField: View {
                     Text("Go Back")
                         .font(.system(size: 30))
                 }
+            }.onAppear {
+                playSound("woosh.mp3")
             }
         }else{
             GameOver(mainMenu: $mainMenu, lastNamePressed: $lastNamePressed)
         }
     }
-}
-
-
-struct GameBrain {
     
-    var data = recipiesData
-    
-    mutating func removeOne(with name: String){
-        data = data.filter{!$0.values.contains(name)}
-    }
-    
-    mutating func getRandom() -> String {
-        let name = data.randomElement()?["image"] ?? ""
-        removeOne(with: name)
-        return name
+    func playSound(_ soundFileName: String) {
+        guard let soundURL = Bundle.main.url(forResource: soundFileName, withExtension: nil) else {
+                    fatalError("Unable to find \(soundFileName) in bundle")
+                }
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+                } catch {
+                    print(error.localizedDescription)
+                }
+                audioPlayer.play()
     }
 }

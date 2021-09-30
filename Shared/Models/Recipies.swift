@@ -106,8 +106,39 @@ let recipiesData : [[String: String]] = [
         "history": "It's possible this recipe might originally have featured chestnuts instead of hazelnuts, since until a blight wiped out an estimated 3 billion American chestnut trees in the early to mid 20th century rendering the species nearly extinct, they were an abundant and widespread food source across much of North America.",
         "recipeURL": "https://hicookery.com/2010/07/14/paganens-algonquin-wild-nut-soup/",
         "difficulty": "2"
+    ],
+    [
+        "image" : "recipe-13",
+        "name": "Sunflower Bannock",
+        "nativeName": "Missiiagan-Pakwejigan",
+        "history": "Like many native American crops, sunflowers were originally domesticated in Mesoamerica, but were cultivated as far north as southern Canada for their nutritious seeds. One source for this recipe lists it as Mohawk, another as Algonquin. Possibly both groups made this dish since they lived near each other. The recipe directions suggest pan-frying it, but another traditional way of making bannock is to wrap the dough around a stick and cook it over an open flame.",
+        "recipeURL": "https://recipeland.com/recipe/v/missiiagan-pakwejigan-sunflower-17324",
+        "difficulty": "3"
+    ],
+    [
+        "image" : "recipe-14",
+        "name": "Iroquois Fish Soup",
+        "nativeName": "Unega'gei",
+        "history": "The Iroquois are a confederacy of peoples living in what is now Southern Ontario and Quebec and the northeastern United States. Fish is an important traditional staple food especially for those living around the Great Lakes.",
+        "recipeURL": "https://www.food.com/recipe/unegagei-306936",
+        "difficulty": "1"
+    ],
+    [
+        "image" : "recipe-15",
+        "name": "Berry Drink",
+        "nativeName": "Mee-Ni-Sha-Piy",
+        "history": "Depending on the region, different berries or other small fruit are available, so find out what grows traditionally where you are! Cranberries, blueberries, salmonberries, strawberries, and chokecherries are all native to various parts of Canada.",
+        "recipeURL": "https://www.refinery29.com/en-ca/2021/06/10498745/indigenous-chefs-recipes#slide-6",
+        "difficulty": "1"
+    ],
+    [
+        "image" : "recipe-16",
+        "name": "Wild Berry Sauce",
+        "nativeName": "Thíŋpsiŋla Wóžapi",
+        "history": "This Lakota-inspired recipe calls for flour made from the timpsila or prairie turnip, but you can substitute a different starch thickener such as cornstarch or arrowroot.",
+        "recipeURL": "https://foragerchef.com/wild-berry-thinpsinla-wozapi/",
+        "difficulty": "1"
     ]
-
 ]
     
 struct Recipies {

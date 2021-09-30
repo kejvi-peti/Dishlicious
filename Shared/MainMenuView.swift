@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct MainMenu: View {
     
     @Binding var gameField: Bool
     @Binding var difficulty: Int
+    @State var audioPlayer: AVAudioPlayer!
+    
     var body: some View {
         
         VStack{
@@ -43,4 +46,7 @@ struct MainMenu: View {
         }
             
     }
+
+        
+    
 }
